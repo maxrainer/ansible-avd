@@ -41,6 +41,6 @@
         commit:
           message: "Ansible commit at {{ now(utc=true,fmt='%Y-%m-%d %H:%M:%S') }}"
         remove: true
-        # token: "{{ git_token }}"
+        token: "{{ git_token }}"
       run_once: true
       check_mode: false
