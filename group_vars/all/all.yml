@@ -1,0 +1,5 @@
+---
+# file and storage handling
+git_url: "https://github.com/maxrainer/ansible-avd-sot.git"
+git_dir: /tmp
+root_dir: /tmp/ansible-avd-sot
