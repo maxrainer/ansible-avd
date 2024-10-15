@@ -42,5 +42,8 @@
           message: "Ansible commit at {{ now(utc=true,fmt='%Y-%m-%d %H:%M:%S') }}"
         remove: true
         token: "{{ git_token }}"
+        tag:
+          message: "{{ git_tag_name }}"
+          annotation: "{{ git_tag_annotation | default(now(utc=true,fmt='%Y-%m-%d-%H-%M-%S')) }}"
       run_once: true
       check_mode: false
