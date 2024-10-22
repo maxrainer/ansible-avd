@@ -6,3 +6,10 @@ git_branch: main
 git_tag_name: "none"
 
 root_dir: ./tmp/ansible-avd-sot
+
+custom_templates:
+  - ssh.j2
+
+management_eapi:
+  enable_http: true
+  enable_https: true

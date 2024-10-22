@@ -22,7 +22,6 @@
         branch:
           name: "{{ git_branch }}"
           duplicate_detection: false
-
       register: _repo
       run_once: true
       check_mode: false
@@ -35,15 +34,15 @@
       ansible.builtin.import_role:
         name: arista.avd.eos_cli_config_gen
 
-    - name: Push Build Design to SCM 
-      ansible.scm.git_publish:
-        path: "{{ _repo['path'] }}"
-        commit:
-          message: "Ansible commit at {{ now(utc=true,fmt='%Y-%m-%d %H:%M:%S') }}"
-        remove: true
-        token: "{{ git_token }}"
-        tag:
-          message: "{{ git_tag_name }}"
-          annotation: "{{ git_tag_annotation | default(now(utc=true,fmt='%Y-%m-%d-%H-%M-%S')) }}"
-      run_once: true
-      check_mode: false
+    # - name: Push Build Design to SCM 
+    #   ansible.scm.git_publish:
+    #     path: "{{ _repo['path'] }}"
+    #     commit:
+    #       message: "Ansible commit at {{ now(utc=true,fmt='%Y-%m-%d %H:%M:%S') }}"
+    #     remove: true
+    #     token: "{{ git_token }}"
+    #     tag:
+    #       message: "{{ git_tag_name }}"
+    #       annotation: "{{ git_tag_annotation | default(now(utc=true,fmt='%Y-%m-%d-%H-%M-%S')) }}"
+    #   run_once: true
+    #   check_mode: false

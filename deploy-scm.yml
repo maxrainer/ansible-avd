@@ -1,0 +1,31 @@
+---
+# deploy.yml
+
+- name: Deploy Configurations to Devices using eAPI # (1)!
+  hosts: FABRIC
+  gather_facts: false
+  tasks:
+
+    - name: Clear Output Directory
+      ansible.builtin.file:
+        state: absent
+        path: "{{ git_dir }}"
+      run_once: true
+      check_mode: false
+
+    - name: Pull Repo from SCM
+      ansible.scm.git_retrieve:
+        origin:
+          url: "{{ git_url }}"
+          token: "{{ git_token }}"
+        parent_directory: "{{ git_dir }}"
+        branch:
+          name: "{{ git_branch }}"
+          duplicate_detection: false
+      register: _repo
+      run_once: true
+      check_mode: false
+    
+    - name: Deploy Configurations to Devices # (2)!
+      ansible.builtin.import_role:
+        name: arista.avd.eos_config_deploy_eapi

@@ -5,13 +5,13 @@ ansible_connection: ansible.netcommon.httpapi
 # Specifies that we are indeed using Arista EOS
 ansible_network_os: arista.eos.eos
 # This user/password must exist on the switches to enable Ansible access
-ansible_user: ansible
-ansible_password: ansible
+# ansible_user: ansible
+# ansible_password: ansible
 # User escalation (to enter enable mode)
 ansible_become: true
 ansible_become_method: enable
 # Use SSL (HTTPS)
-ansible_httpapi_use_ssl: true
+ansible_httpapi_use_ssl: false
 # Do not try to validate certs
 ansible_httpapi_validate_certs: false
 
@@ -33,6 +33,7 @@ local_users:
   - name: admin
     privilege: 15
     role: network-admin
+    sha512_password: $6$KvDI7MShbzkdeb/t$krSxh1rBsOy/fZ29kVCMnDUCEqSvG84g5kVKmwU3N5MfL8JFOFWfqSQUUrHorsbkKOo4JK13mM.kwNj/J7B6P/
     no_password: true
 
 # BGP peer groups passwords
