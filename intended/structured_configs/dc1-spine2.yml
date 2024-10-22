@@ -121,7 +121,7 @@ management_interfaces:
   description: oob_management
   shutdown: false
   vrf: MGMT
-  ip_address: 172.16.1.12/24
+  ip_address: 172.16.4.182/21
   gateway: 172.16.1.1
   type: oob
 management_api_http:

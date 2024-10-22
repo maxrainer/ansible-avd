@@ -1,2 +1,5 @@
 nosync*
 scm*
+*.log
+deploy*.json
+intended/*
