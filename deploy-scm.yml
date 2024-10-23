@@ -16,9 +16,9 @@
     - name: Pull Repo from SCM
       ansible.scm.git_retrieve:
         origin:
-          tag: "{{ git_tag | default(omit) }}"
           url: "{{ git_url }}"
           token: "{{ git_token }}"
+          # tag: "oct22"
         parent_directory: "{{ git_dir }}"
         branch:
           name: "{{ git_branch }}"
