@@ -18,7 +18,6 @@
         origin:
           url: "{{ git_url }}"
           token: "{{ git_token }}"
-          # tag: "oct22"
         parent_directory: "{{ git_dir }}"
         branch:
           name: "{{ git_branch }}"
@@ -27,6 +26,6 @@
       run_once: true
       check_mode: false
     
-    - name: Deploy Configurations to Devices # (2)!
-      ansible.builtin.import_role:
-        name: arista.avd.eos_config_deploy_eapi
+    # - name: Deploy Configurations to Devices # (2)!
+    #   ansible.builtin.import_role:
+    #     name: arista.avd.eos_config_deploy_eapi
