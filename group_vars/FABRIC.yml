@@ -84,3 +84,5 @@ ntp_settings:
   servers:
     - name: 0.pool.ntp.org
     - name: 1.pool.ntp.org
+    - name: 2.pool.ntp.orgcccccckvlbhjucnvvrnfbjricrtkkkvrjkhcinidlehn
+    
